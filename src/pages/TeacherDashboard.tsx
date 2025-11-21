@@ -1,8 +1,8 @@
 import Navigation from "@/components/Navigation";
 import StatCard from "@/components/StatCard";
-import { Users, CheckCircle, TrendingUp, QrCode } from "lucide-react";
+import { Users, CheckCircle, TrendingUp, QrCode, Wallet, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { dummyActions } from "@/data/dummyData";
+import { dummyActions, teacherWallet } from "@/data/dummyData";
 import { toast } from "sonner";
 
 const TeacherDashboard = () => {
@@ -29,6 +29,49 @@ const TeacherDashboard = () => {
             <StatCard icon={CheckCircle} label="Verified Actions" value={125} trend="+12 this week" iconColor="text-green-600" />
             <StatCard icon={TrendingUp} label="Club Points" value={8500} trend="Rank #1" iconColor="text-yellow-600" />
             <StatCard icon={QrCode} label="Pending" value={pendingActions.length} iconColor="text-orange-600" />
+          </div>
+
+          {/* Teacher Wallet */}
+          <div className="card-eco p-6 mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Wallet className="w-6 h-6 text-primary" />
+              <h2 className="text-2xl font-bold">Teacher Wallet</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="p-4 bg-accent rounded-xl">
+                <div className="text-sm text-muted-foreground mb-1">Total Earnings</div>
+                <div className="text-2xl font-bold text-primary">KSh {teacherWallet.totalEarnings.toLocaleString()}</div>
+              </div>
+              <div className="p-4 bg-accent rounded-xl">
+                <div className="text-sm text-muted-foreground mb-1">Pending Payout</div>
+                <div className="text-2xl font-bold text-orange-600">KSh {teacherWallet.pendingPayout.toLocaleString()}</div>
+              </div>
+              <div className="p-4 bg-accent rounded-xl">
+                <div className="text-sm text-muted-foreground mb-1">Per Verified Action</div>
+                <div className="text-2xl font-bold">KSh {teacherWallet.earningsPerAction}</div>
+              </div>
+            </div>
+
+            <div className="mb-6">
+              <h3 className="font-semibold mb-3">Payment History</h3>
+              <div className="space-y-3">
+                {teacherWallet.paymentHistory.map((payment) => (
+                  <div key={payment.id} className="flex items-center justify-between p-3 bg-accent rounded-lg">
+                    <div>
+                      <div className="font-medium">KSh {payment.amount.toLocaleString()}</div>
+                      <div className="text-sm text-muted-foreground">{payment.date} • {payment.method}</div>
+                    </div>
+                    <div className="badge-eco bg-green-100 text-green-700">✓ {payment.status}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <Button className="btn-eco w-full md:w-auto" onClick={() => toast.success("Payout request submitted!")}>
+              <Download className="w-4 h-4 mr-2" />
+              Request Payout
+            </Button>
           </div>
 
           {/* Quick Tools */}

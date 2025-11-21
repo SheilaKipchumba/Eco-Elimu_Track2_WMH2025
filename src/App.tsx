@@ -11,7 +11,7 @@ import ContentHub from "./pages/ContentHub";
 import TeacherResources from "./pages/TeacherResources";
 import FunderDashboard from "./pages/FunderDashboard";
 import Leaderboard from "./pages/Leaderboard";
-import NotFound from "./pages/NotFound";
+import ImpactFundingHub from "./pages/ImpactFundingHub";
 
 const queryClient = new QueryClient();
 
@@ -31,7 +31,7 @@ const App = () => (
           <Route path="/funder-dashboard" element={<FunderDashboard />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/impact-funding" element={<ImpactFundingHub />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
