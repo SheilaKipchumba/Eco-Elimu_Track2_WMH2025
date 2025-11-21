@@ -28,14 +28,14 @@ const Index = () => {
                 Start Logging Actions
               </Button>
             </Link>
-            <Link to="/student-dashboard">
+            <Link to="/teacher-dashboard">
               <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full">
-                View Dashboard
+                Teacher Dashboard
               </Button>
             </Link>
-            <Link to="/content-hub">
+            <Link to="/funder-dashboard">
               <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full">
-                Learn Climate Skills
+                Sponsor Dashboard
               </Button>
             </Link>
           </div>

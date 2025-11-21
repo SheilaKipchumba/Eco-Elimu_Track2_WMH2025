@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import { dummySchools, studentLeaderboard } from "@/data/dummyData";
+import { dummySchools, studentLeaderboard, teacherLeaderboard } from "@/data/dummyData";
 import { Trophy, Medal, Award } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -23,9 +23,10 @@ const Leaderboard = () => {
           </div>
 
           <Tabs defaultValue="schools" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-6">
+            <TabsList className="grid w-full grid-cols-4 mb-6">
               <TabsTrigger value="schools">Schools</TabsTrigger>
               <TabsTrigger value="students">Students</TabsTrigger>
+              <TabsTrigger value="teachers">Teachers</TabsTrigger>
               <TabsTrigger value="counties">Counties</TabsTrigger>
             </TabsList>
 
@@ -68,6 +69,29 @@ const Leaderboard = () => {
                     <div className="text-right">
                       <div className="text-2xl font-bold text-primary">{student.points.toLocaleString()}</div>
                       <div className="text-xs text-muted-foreground">points</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </TabsContent>
+
+            <TabsContent value="teachers" className="space-y-4">
+              {teacherLeaderboard.map((teacher) => (
+                <div key={teacher.rank} className="card-eco p-5 hover:scale-[1.02] transition-transform">
+                  <div className="flex items-center gap-4">
+                    <div className="flex-shrink-0">
+                      {getRankIcon(teacher.rank)}
+                    </div>
+                    <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center font-bold text-lg">
+                      {teacher.name[0]}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg">{teacher.name}</h3>
+                      <p className="text-sm text-muted-foreground">{teacher.school} • {teacher.verified} verified</p>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-primary">KSh {teacher.earnings.toLocaleString()}</div>
+                      <div className="text-xs text-muted-foreground">earned</div>
                     </div>
                   </div>
                 </div>

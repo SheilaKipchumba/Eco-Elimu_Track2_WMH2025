@@ -213,3 +213,55 @@ export const teacherResources = [
     description: "Guide for mentoring student environmental leaders",
   },
 ];
+
+export const teacherWallet = {
+  totalEarnings: 12500,
+  pendingPayout: 3200,
+  earningsPerAction: 50,
+  paymentHistory: [
+    { id: "p1", date: "2024-01-10", amount: 2500, status: "Completed", method: "M-Pesa" },
+    { id: "p2", date: "2023-12-15", amount: 3000, status: "Completed", method: "M-Pesa" },
+    { id: "p3", date: "2023-11-20", amount: 2200, status: "Completed", method: "Bank Transfer" },
+  ],
+};
+
+export const teacherLeaderboard = [
+  { rank: 1, name: "Ms. Wanjiku", school: "Greenfields Secondary", verified: 145, earnings: 7250 },
+  { rank: 2, name: "Mr. Ochieng", school: "Riverside Academy", verified: 128, earnings: 6400 },
+  { rank: 3, name: "Mrs. Maina", school: "Mara Hills School", verified: 112, earnings: 5600 },
+  { rank: 4, name: "Mr. Kamau", school: "Coast View High", verified: 98, earnings: 4900 },
+];
+
+export const fundingOpportunities = [
+  {
+    id: "f1",
+    schoolName: "Greenfields Secondary",
+    county: "Nairobi",
+    impact: { trees: 450, plastic: 180, actions: 125 },
+    fundingNeeded: 50000,
+    category: "Top Performer",
+  },
+  {
+    id: "f2",
+    schoolName: "Riverside Academy",
+    county: "Kisumu",
+    impact: { trees: 380, plastic: 150, actions: 98 },
+    fundingNeeded: 45000,
+    category: "Rising Star",
+  },
+  {
+    id: "f3",
+    schoolName: "Mara Hills School",
+    county: "Nakuru",
+    impact: { trees: 320, plastic: 140, actions: 87 },
+    fundingNeeded: 40000,
+    category: "Consistent Impact",
+  },
+];
+
+export const activityFunding = [
+  { type: "Tree Planting", fundsAllocated: 125000, actionsSupported: 1250 },
+  { type: "Plastic Collection", fundsAllocated: 85000, actionsSupported: 1700 },
+  { type: "Clean-Ups", fundsAllocated: 67500, actionsSupported: 900 },
+  { type: "Kitchen Gardens", fundsAllocated: 56000, actionsSupported: 700 },
+];

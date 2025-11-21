@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, Target, User, GraduationCap, BookOpen, FileText, TrendingUp, BarChart3 } from "lucide-react";
+import { Home, Target, User, GraduationCap, BookOpen, Heart, TrendingUp, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Navigation = () => {
@@ -11,8 +11,8 @@ const Navigation = () => {
     { path: "/student-dashboard", label: "Student", icon: User },
     { path: "/teacher-dashboard", label: "Teacher", icon: GraduationCap },
     { path: "/content-hub", label: "Learn", icon: BookOpen },
-    { path: "/teacher-resources", label: "Resources", icon: FileText },
-    { path: "/funder-dashboard", label: "Impact", icon: TrendingUp },
+    { path: "/impact-funding", label: "Funding", icon: Heart },
+    { path: "/funder-dashboard", label: "Sponsors", icon: TrendingUp },
     { path: "/leaderboard", label: "Rankings", icon: BarChart3 },
   ];
 
