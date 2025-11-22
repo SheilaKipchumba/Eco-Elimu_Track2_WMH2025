@@ -3,8 +3,11 @@ import { TreePine, Recycle, Award } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import StatCard from "@/components/StatCard";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Index = () => {
+  const { profile } = useAuth();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-accent/20">
       <Navigation />
@@ -28,14 +31,23 @@ const Index = () => {
                 Start Logging Actions
               </Button>
             </Link>
-            <Link to="/teacher-dashboard">
+            {profile?.role === "teacher" && (
+              <Link to="/teacher-dashboard">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full">
+                  Teacher Dashboard
+                </Button>
+              </Link>
+            )}
+            {profile?.role === "sponsor" && (
+              <Link to="/funder-dashboard">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full">
+                  Sponsor Dashboard
+                </Button>
+              </Link>
+            )}
+            <Link to="/sms-concept">
               <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full">
-                Teacher Dashboard
-              </Button>
-            </Link>
-            <Link to="/funder-dashboard">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full">
-                Sponsor Dashboard
+                Offline Logging
               </Button>
             </Link>
           </div>
@@ -74,17 +86,37 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold mb-6 text-center">Get Started</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link to="/student-dashboard" className="card-eco p-6 hover:scale-105 transition-all">
-              <div className="text-3xl mb-3">👨‍🎓</div>
-              <h3 className="font-semibold text-lg mb-2">I'm a Student</h3>
-              <p className="text-sm text-muted-foreground">Track your actions, earn points, and compete with friends</p>
-            </Link>
+            {profile?.role === "student" && (
+              <Link to="/student-dashboard" className="card-eco p-6 hover:scale-105 transition-all">
+                <div className="text-3xl mb-3">👨‍🎓</div>
+                <h3 className="font-semibold text-lg mb-2">My Dashboard</h3>
+                <p className="text-sm text-muted-foreground">Track your actions, earn points, and compete with friends</p>
+              </Link>
+            )}
             
-            <Link to="/teacher-dashboard" className="card-eco p-6 hover:scale-105 transition-all">
-              <div className="text-3xl mb-3">👩‍🏫</div>
-              <h3 className="font-semibold text-lg mb-2">I'm a Teacher</h3>
-              <p className="text-sm text-muted-foreground">Manage your 4K Club and verify student activities</p>
-            </Link>
+            {profile?.role === "teacher" && (
+              <>
+                <Link to="/teacher-dashboard" className="card-eco p-6 hover:scale-105 transition-all">
+                  <div className="text-3xl mb-3">👩‍🏫</div>
+                  <h3 className="font-semibold text-lg mb-2">My Dashboard</h3>
+                  <p className="text-sm text-muted-foreground">Manage your 4K Club and verify student activities</p>
+                </Link>
+                
+                <Link to="/teacher-community" className="card-eco p-6 hover:scale-105 transition-all">
+                  <div className="text-3xl mb-3">💬</div>
+                  <h3 className="font-semibold text-lg mb-2">Teacher Community</h3>
+                  <p className="text-sm text-muted-foreground">Connect with fellow teachers and share ideas</p>
+                </Link>
+              </>
+            )}
+            
+            {profile?.role === "sponsor" && (
+              <Link to="/funder-dashboard" className="card-eco p-6 hover:scale-105 transition-all">
+                <div className="text-3xl mb-3">💼</div>
+                <h3 className="font-semibold text-lg mb-2">Sponsor Dashboard</h3>
+                <p className="text-sm text-muted-foreground">View impact metrics and fund top-performing schools</p>
+              </Link>
+            )}
             
             <Link to="/content-hub" className="card-eco p-6 hover:scale-105 transition-all">
               <div className="text-3xl mb-3">📚</div>
