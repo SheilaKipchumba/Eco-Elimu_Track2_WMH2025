@@ -1,20 +1,42 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, Target, User, GraduationCap, BookOpen, Heart, TrendingUp, BarChart3 } from "lucide-react";
+import { Home, Target, User, GraduationCap, BookOpen, Heart, TrendingUp, BarChart3, LogOut, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/contexts/AuthContext";
+import { Button } from "./ui/button";
 
 const Navigation = () => {
   const location = useLocation();
+  const { profile, signOut } = useAuth();
 
-  const navItems = [
-    { path: "/", label: "Home", icon: Home },
-    { path: "/action-center", label: "Actions", icon: Target },
-    { path: "/student-dashboard", label: "Student", icon: User },
-    { path: "/teacher-dashboard", label: "Teacher", icon: GraduationCap },
-    { path: "/content-hub", label: "Learn", icon: BookOpen },
-    { path: "/impact-funding", label: "Funding", icon: Heart },
-    { path: "/funder-dashboard", label: "Sponsors", icon: TrendingUp },
-    { path: "/leaderboard", label: "Rankings", icon: BarChart3 },
-  ];
+  const getNavItems = () => {
+    const baseItems = [
+      { path: "/", label: "Home", icon: Home },
+      { path: "/action-center", label: "Actions", icon: Target },
+      { path: "/leaderboard", label: "Rankings", icon: BarChart3 },
+      { path: "/content-hub", label: "Learn", icon: BookOpen },
+    ];
+
+    if (profile?.role === "student") {
+      return [...baseItems, { path: "/student-dashboard", label: "Dashboard", icon: User }];
+    } else if (profile?.role === "teacher") {
+      return [
+        ...baseItems,
+        { path: "/teacher-dashboard", label: "Dashboard", icon: GraduationCap },
+        { path: "/teacher-resources", label: "Resources", icon: BookOpen },
+        { path: "/teacher-community", label: "Community", icon: Users },
+      ];
+    } else if (profile?.role === "sponsor") {
+      return [
+        ...baseItems,
+        { path: "/funder-dashboard", label: "Dashboard", icon: TrendingUp },
+        { path: "/impact-funding", label: "Funding", icon: Heart },
+      ];
+    }
+
+    return baseItems;
+  };
+
+  const navItems = getNavItems();
 
   return (
     <nav className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
@@ -47,6 +69,16 @@ const Navigation = () => {
                 </Link>
               );
             })}
+            
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={signOut}
+              className="ml-2"
+            >
+              <LogOut className="w-4 h-4 mr-2" />
+              Sign Out
+            </Button>
           </div>
 
           {/* Mobile menu - simplified icons only */}
@@ -69,6 +101,14 @@ const Navigation = () => {
                 </Link>
               );
             })}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={signOut}
+              className="p-2"
+            >
+              <LogOut className="w-5 h-5" />
+            </Button>
           </div>
         </div>
       </div>
