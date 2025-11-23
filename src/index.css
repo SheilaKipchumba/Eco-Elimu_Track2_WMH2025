@@ -8,109 +8,96 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Eco-green brand colors */
-    --background: 144 60% 96%;
-    --foreground: 144 100% 10%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 144 100% 10%;
-
+    /* ECO-ELIMU Color Palette: Green, White, Beige */
+    --background: 40 20% 97%; /* Warm beige background */
+    --foreground: 142 30% 15%; /* Deep green for text */
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 142 30% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 144 100% 10%;
-
-    /* Primary sea green #2E8B57 */
-    --primary: 146 51% 36%;
+    --popover-foreground: 142 30% 15%;
+    --primary: 142 71% 45%; /* Vibrant environmental green */
     --primary-foreground: 0 0% 100%;
-
-    /* Forest green accent #1A5632 */
-    --secondary: 144 56% 22%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 144 40% 94%;
-    --muted-foreground: 144 20% 45%;
-
-    /* Accent mint tones */
-    --accent: 152 45% 85%;
-    --accent-foreground: 144 100% 10%;
-
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 40 25% 85%; /* Soft beige */
+    --secondary-foreground: 142 30% 15%;
+    --muted: 40 15% 92%; /* Light beige */
+    --muted-foreground: 142 20% 40%;
+    --accent: 142 60% 90%; /* Light green accent */
+    --accent-foreground: 142 71% 25%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 144 30% 88%;
-    --input: 144 30% 88%;
-    --ring: 146 51% 36%;
-
-    --radius: 1rem;
+    --border: 40 20% 88%;
+    --input: 40 15% 92%;
+    --ring: 142 71% 45%;
+    --radius: 0.75rem;
     
-    /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(146 51% 36%), hsl(144 56% 22%));
-    --gradient-light: linear-gradient(180deg, hsl(144 60% 96%), hsl(152 45% 85%));
+    /* Status Colors */
+    --status-pending: 43 96% 56%; /* Yellow for pending */
+    --status-verified: 142 71% 45%; /* Green for verified */
+    --status-paid: 197 71% 45%; /* Blue for paid */
+    --status-rejected: 0 84% 60%; /* Red for rejected */
     
-    /* Shadows */
-    --shadow-sm: 0 2px 8px hsl(146 51% 36% / 0.08);
-    --shadow-md: 0 4px 16px hsl(146 51% 36% / 0.12);
-    --shadow-lg: 0 8px 24px hsl(146 51% 36% / 0.16);
+    /* Impact Colors */
+    --impact-plastic: 197 71% 45%; /* Ocean blue */
+    --impact-trees: 142 71% 35%; /* Forest green */
+    --impact-climate: 43 96% 56%; /* Sun yellow */
+    --impact-water: 197 71% 55%; /* Water blue */
     
-    /* Animations */
-    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142, 71%, 45%), hsl(142, 60%, 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(142, 71%, 45%) 0%, hsl(142, 60%, 35%) 50%, hsl(40, 25%, 85%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(40, 15%, 97%) 100%);
+    
+    /* Shadows - Soft and natural */
+    --shadow-sm: 0 1px 3px 0 rgba(46, 125, 50, 0.08);
+    --shadow-md: 0 4px 12px -2px rgba(46, 125, 50, 0.12);
+    --shadow-lg: 0 12px 24px -4px rgba(46, 125, 50, 0.15);
+    --shadow-glow: 0 0 20px rgba(46, 125, 50, 0.2);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 142 30% 15%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 15% 95%;
+    --sidebar-accent-foreground: 142 30% 15%;
+    --sidebar-border: 40 20% 88%;
+    --sidebar-ring: 142 71% 45%;
   }
 
   .dark {
-    --background: 144 45% 8%;
-    --foreground: 144 20% 95%;
-
-    --card: 144 40% 12%;
-    --card-foreground: 144 20% 95%;
-
-    --popover: 144 40% 12%;
-    --popover-foreground: 144 20% 95%;
-
-    --primary: 146 51% 45%;
+    --background: 142 25% 8%;
+    --foreground: 40 20% 95%;
+    --card: 142 20% 12%;
+    --card-foreground: 40 20% 95%;
+    --popover: 142 20% 12%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 142 71% 50%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 144 56% 28%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 144 30% 18%;
-    --muted-foreground: 144 20% 60%;
-
-    --accent: 152 35% 25%;
-    --accent-foreground: 144 20% 95%;
-
-    --destructive: 0 62.8% 45%;
+    --secondary: 40 15% 20%;
+    --secondary-foreground: 40 20% 95%;
+    --muted: 142 15% 18%;
+    --muted-foreground: 40 15% 65%;
+    --accent: 142 40% 20%;
+    --accent-foreground: 40 20% 95%;
+    --destructive: 0 62% 40%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 144 25% 20%;
-    --input: 144 25% 20%;
-    --ring: 146 51% 45%;
+    --border: 142 15% 22%;
+    --input: 142 15% 22%;
+    --ring: 142 71% 50%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(146 51% 45%), hsl(144 56% 28%));
-    --gradient-light: linear-gradient(180deg, hsl(144 45% 8%), hsl(152 35% 25%));
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142, 71%, 50%), hsl(142, 60%, 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(142, 71%, 40%) 0%, hsl(142, 60%, 30%) 50%, hsl(40, 15%, 20%) 100%);
     
-    --sidebar-background: 144 40% 10%;
-    --sidebar-foreground: 144 20% 90%;
-    --sidebar-primary: 146 51% 45%;
+    /* Sidebar */
+    --sidebar-background: 142 20% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 142 71% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 144 30% 18%;
-    --sidebar-accent-foreground: 144 20% 90%;
-    --sidebar-border: 144 25% 20%;
-    --sidebar-ring: 146 51% 45%;
+    --sidebar-accent: 142 15% 18%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 142 15% 22%;
+    --sidebar-ring: 142 71% 50%;
   }
 }
 
@@ -129,19 +116,51 @@ All colors MUST be HSL.
 }
 
 @layer components {
+  /* ECO-ELIMU Custom Components */
   .card-eco {
-    @apply bg-card rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-border/50;
+    @apply bg-card border border-border/50 rounded-xl p-6 shadow-md hover:shadow-lg transition-all;
+    background: linear-gradient(180deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
   }
-  
+
   .btn-eco {
-    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full px-6 py-3 font-medium hover:shadow-lg transition-all duration-300 hover:scale-105;
+    @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg transition-all hover:scale-[1.02] active:scale-[0.98];
+    box-shadow: 0 4px 12px -2px hsl(var(--primary) / 0.3);
   }
-  
+
+  .btn-eco:hover {
+    box-shadow: 0 8px 20px -4px hsl(var(--primary) / 0.4);
+  }
+
   .stat-card {
-    @apply card-eco p-6 flex flex-col items-center text-center;
+    @apply bg-card border border-border/50 rounded-xl p-6 transition-all hover:border-primary/30;
+    box-shadow: var(--shadow-sm);
   }
-  
+
+  .stat-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
   .badge-eco {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-accent text-accent-foreground;
+    @apply bg-primary/10 text-primary px-3 py-1.5 rounded-full text-sm font-semibold border border-primary/20;
+  }
+
+  .badge-pending {
+    @apply bg-yellow-50 text-yellow-700 border-yellow-200 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-verified {
+    @apply bg-green-50 text-green-700 border-green-200 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-paid {
+    @apply bg-blue-50 text-blue-700 border-blue-200 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-rejected {
+    @apply bg-red-50 text-red-700 border-red-200 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .impact-card {
+    @apply bg-card border-2 border-primary/20 rounded-xl p-6 transition-all hover:border-primary/40 hover:shadow-lg;
   }
 }
