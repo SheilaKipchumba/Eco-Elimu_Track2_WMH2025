@@ -75,7 +75,7 @@ const Auth = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8 animate-fade-in">
           <div className="text-5xl mb-4">🌍</div>
-          <h1 className="text-3xl font-bold mb-2">Voices of the Planet</h1>
+          <h1 className="text-3xl font-bold mb-2">Eco-Elimu</h1>
           <p className="text-muted-foreground">Youth-Powered Environmental Action</p>
         </div>
 
