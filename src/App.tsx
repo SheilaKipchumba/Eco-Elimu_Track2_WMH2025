@@ -17,6 +17,7 @@ import ImpactFundingHub from "./pages/ImpactFundingHub";
 import Auth from "./pages/Auth";
 import TeacherCommunity from "./pages/TeacherCommunity";
 import SMSConcept from "./pages/SMSConcept";
+import ClimateCoursePage from "./pages/ClimateCoursePage";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
             <Route path="/impact-funding" element={<ProtectedRoute allowedRoles={["sponsor"]}><ImpactFundingHub /></ProtectedRoute>} />
             <Route path="/sms-concept" element={<ProtectedRoute><SMSConcept /></ProtectedRoute>} />
+            <Route path="/climate-course" element={<ProtectedRoute><ClimateCoursePage /></ProtectedRoute>} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>
