@@ -1,54 +1,237 @@
-# Welcome to your Lovable project
+Eco-Elimu_Track2_WMH2025
+🌿 Eco-Elimu — Track 2: Community Engagement & 4K Clubs
+Wangari Maathai Hackathon 2025 Submission
+Team Name: Eco-Elimu Team Members:
 
-## Project info
+Beryl Makaya — Team Lead & Environmental Educator
+Sheila Jelagat Kipchumba — UX & Prototype Contact: sheilakipchumba43@gmail.com
+1. Project Overview
+Eco-Elimu is a digital platform designed to revive 4K Clubs, strengthen community participation, and empower learners and teachers with climate education, structured environmental activities, and transparent impact tracking.
 
-**URL**: https://lovable.dev/projects/23826d9c-7d0f-478c-ac26-e4256f162a42
+Our solution blends learning, community engagement, and verified climate actions, helping schools participate meaningfully in environmental protection while connecting them to supporters.
 
-## How can I edit this code?
+2. Track Alignment — Track 2: Community Engagement & 4K Clubs
+Eco-Elimu directly supports Track 2 by:
 
-There are several ways of editing your application.
+Re-activating 4K Clubs through guided environmental activities
+Providing teachers with structured resources and mentorship
+Creating a community hub that connects schools, mentors, and funders
+Encouraging youth-led climate action through gamified learning
+Enabling local communities to verify actions and celebrate impact
+This solution is optimized for GBM & WMF contexts, where youth clubs, schools, and community forestry groups are central to restoration.
 
-**Use Lovable**
+3. Problem Statement
+Many schools and 4K Clubs face challenges such as:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/23826d9c-7d0f-478c-ac26-e4256f162a42) and start prompting.
+Lack of structured climate education
+Teacher burnout with no incentives or support
+Dormant or inconsistent club activities
+No tools to document impact (trees, cleanups, plastic collection)
+Communities disconnected from student-led climate action
+Funders lacking visibility and verification
+This results in weak community engagement, low youth participation, and unverified environmental actions.
 
-Changes made via Lovable will be committed automatically to this repo.
+4. Proposed Solution — Eco-Elimu Platform
+Eco-Elimu revives school-based climate clubs through:
 
-**Use your preferred IDE**
+✔ Structured Learning
+A Climate Change Course with 4 modules + quizzes. Students earn 2,000 points per completed lesson.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+✔ Action Center
+Students log actions such as:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Tree planting
+Plastic collection
+Clean-ups
+Teachers verify actions → recorded in the school dashboard.
 
-Follow these steps:
+✔ Teacher Dashboard (Private Earnings)
+Teachers approve activities
+Access climate teaching resources
+Private activity-based earning summary
+✔ Community Hub
+(Mentorship + Club Network merged here)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Mentor resources
+Club stories
+Community challenges
+✔ Funder Dashboard
+Funders support actions—they do NOT earn. They get:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Verified reports
+Photos + teacher approvals
+Regional-level and school-level impact stats
+5. Technical Approach / Prototype Architecture
+Frontend (Lovable Prototype)
+        |
+        v
+Application Layer (Web/Mobile)
+- Student Interface
+- Teacher Dashboard
+- Community Hub
+- Funder Dashboard
+        |
+        v
+Backend Services
+- User Authentication
+- Action Logging API
+- Teacher Verification Engine
+- Course Module Service
+        |
+        v
+Database
+- Users
+- Clubs & Schools
+- Actions (trees, plastic, cleanups)
+- Quizzes & Course Progress
+        |
+        v
+Impact Verification Layer
+- Photo checks (manual or AI-assisted)
+- Teacher confirmation
+        |
+        v
+Funder Reporting Module
+Tools used:
 
-# Step 3: Install the necessary dependencies.
-npm i
+Lovable (Prototype)
+Firebase / SQL (Suggested)
+Basic AI image-verification (optional future step)
+6. Core Features of the MVP
+For Students
+Log climate actions
+Complete climate lessons & quizzes
+Earn points (gamified)
+Join community challenges
+For Teachers
+Verify student actions
+Access lesson plans
+View private earnings summary
+Participate in teacher community
+For Schools
+View club leaderboard
+Track all activities
+Download impact reports
+For Funders
+View actions they can support
+See verified impact
+Follow progress of sponsored schools
+8. Repository Structure
+Eco-Elimu_Track2_WMH2025/
+│
+├── README.md
+├── pitch-deck/
+│   └── Eco-Elimu_PitchDeck.pdf
+│
+├── prototype/
+│   ├── lovable-prototype-link.txt
+│   └── figma-screens.png
+│
+├── documentation/
+│   ├── architecture.png
+│   ├── datasets.md
+│   ├── api-endpoints.md
+│
+└── demo-video/
+    ├── demo.mp4
+    └── script.txt
+9. Pitch Deck
+Eco-Elimu_PitchDeck.pdf
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+10. Dataset Documentation
+Data Collected Within Eco-Elimu
+Eco-Elimu collects structured environmental activity data from 4K Clubs:
 
-**Edit a file directly in GitHub**
+Tree Planting Records: species, quantity, date, location, photo evidence
+Plastic Collection Records: weight (kg), category (PET, HDPE, etc.), collection site, photos
+Clean-Up Activities: area covered, number of participants, waste collected
+User & Club Data
+Student profiles (Name, School, Class)
+Teacher profiles (Name, School)
+School information (Location, Club details)
+Funder profiles (Organization name, region)
+Course Progress Data
+Completed modules
+Quiz scores
+Lesson completion timestamps
+Verification Data
+Teacher approvals
+AI/manual photo verification logs
+Suggested External Data Sources
+GBM tree species lists
+County forest cover datasets
+WMF historical club activity data
+OpenStreetMap (school mapping)
+11. API Documentation
+Below is the proposed API structure for Eco-Elimu. These endpoints support the MVP.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Authentication Endpoints
+POST /auth/register
+Registers new users (student, teacher, funder).
 
-**Use GitHub Codespaces**
+POST /auth/login
+Returns authentication token for user sessions.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Student Endpoints
+POST /actions/log
+Logs an environmental action.
+
+Body:
+student_id
+action_type (tree, plastic, cleanup)
+description
+photo_url
+quantity
+GET /student/{id}/progress
+Returns student lessons, points, and actions.
+
+Teacher Endpoints
+GET /teacher/actions/pending
+View list of student-submitted actions awaiting verification.
+
+POST /teacher/actions/verify
+Approve or reject student action.
+
+Body:
+action_id
+status (approved/rejected)
+GET /teacher/earnings
+Private teacher earnings.
+
+Course Module Endpoints
+GET /courses
+Returns available courses.
+
+GET /courses/{id}/modules
+Returns module list.
+
+POST /courses/submit-quiz
+Submit quiz answers.
+
+Funder Endpoints
+GET /funders/actions
+View list of supported school activities.
+
+POST /funders/support
+Support a tree planting, plastic drive, or cleanup.
+
+Body:
+school_id
+action_type
+amount
+School Dashboard Endpoints
+GET /school/{id}/report
+Generates school impact report.
+
+12. Appendix (Optional)
+Field insights from teachers
+Sample club activity calendar
+Community interview notes
+Expanded data workflow diagram
+✔ Eco-Elimu — Youth-Powered Environmental Engagement
+This platform is built to strengthen communities, empower learners, and drive local climate action — one school at a time.
+
+
 
 ## What technologies are used for this project?
 
@@ -60,14 +243,5 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/23826d9c-7d0f-478c-ac26-e4256f162a42) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
