@@ -60,18 +60,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        status: {
-          pending: "hsl(var(--status-pending))",
-          verified: "hsl(var(--status-verified))",
-          paid: "hsl(var(--status-paid))",
-          rejected: "hsl(var(--status-rejected))",
-        },
-        impact: {
-          plastic: "hsl(var(--impact-plastic))",
-          trees: "hsl(var(--impact-trees))",
-          climate: "hsl(var(--impact-climate))",
-          water: "hsl(var(--impact-water))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",

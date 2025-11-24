@@ -17,11 +17,6 @@ import ImpactFundingHub from "./pages/ImpactFundingHub";
 import Auth from "./pages/Auth";
 import TeacherCommunity from "./pages/TeacherCommunity";
 import SMSConcept from "./pages/SMSConcept";
-import TeacherOnboarding from "./pages/TeacherOnboarding";
-import TeacherHome from "./pages/TeacherHome";
-import LogActivity from "./pages/LogActivity";
-import MyEarnings from "./pages/MyEarnings";
-import CorporateDashboard from "./pages/CorporateDashboard";
 
 const queryClient = new QueryClient();
 
@@ -35,11 +30,6 @@ const App = () => (
           <Routes>
             <Route path="/auth" element={<Auth />} />
             <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
-            <Route path="/teacher-onboarding" element={<ProtectedRoute allowedRoles={["teacher"]}><TeacherOnboarding /></ProtectedRoute>} />
-            <Route path="/teacher-home" element={<ProtectedRoute allowedRoles={["teacher"]}><TeacherHome /></ProtectedRoute>} />
-            <Route path="/log-activity" element={<ProtectedRoute allowedRoles={["teacher"]}><LogActivity /></ProtectedRoute>} />
-            <Route path="/my-earnings" element={<ProtectedRoute allowedRoles={["teacher"]}><MyEarnings /></ProtectedRoute>} />
-            <Route path="/corporate-dashboard" element={<ProtectedRoute allowedRoles={["sponsor"]}><CorporateDashboard /></ProtectedRoute>} />
             <Route path="/action-center" element={<ProtectedRoute><ActionCenter /></ProtectedRoute>} />
             <Route path="/student-dashboard" element={<ProtectedRoute allowedRoles={["student"]}><StudentDashboard /></ProtectedRoute>} />
             <Route path="/teacher-dashboard" element={<ProtectedRoute allowedRoles={["teacher"]}><TeacherDashboard /></ProtectedRoute>} />
