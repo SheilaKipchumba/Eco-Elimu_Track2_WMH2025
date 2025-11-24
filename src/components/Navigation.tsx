@@ -46,7 +46,7 @@ const Navigation = () => {
             <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-xl font-bold">
               🌍
             </div>
-            <span className="font-bold text-lg hidden sm:inline">Voices of the Planet</span>
+            <span className="font-bold text-lg hidden sm:inline">Eco-Elimu</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-1">
