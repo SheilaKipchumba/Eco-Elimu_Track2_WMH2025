@@ -1,5 +1,5 @@
-Eco-Elimu_Track2_WMH2025
-🌿 Eco-Elimu — Track 2: Community Engagement & 4K Clubs
+Eco-Elimu_Track3_WMH2025
+🌿 Eco-Elimu — Track 3: Community Engagement & 4K Clubs
 Wangari Maathai Hackathon 2025 Submission
 Team Name: Eco-Elimu Team Members:
 
@@ -10,8 +10,8 @@ Eco-Elimu is a digital platform designed to revive 4K Clubs, strengthen communit
 
 Our solution blends learning, community engagement, and verified climate actions, helping schools participate meaningfully in environmental protection while connecting them to supporters.
 
-2. Track Alignment — Track 2: Community Engagement & 4K Clubs
-Eco-Elimu directly supports Track 2 by:
+2. Track Alignment — Track 3: Community Engagement & 4K Clubs
+Eco-Elimu directly supports Track 3 by:
 
 Re-activating 4K Clubs through guided environmental activities
 Providing teachers with structured resources and mentorship
